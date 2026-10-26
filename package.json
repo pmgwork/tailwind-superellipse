@@ -1,0 +1,30 @@
+{
+  "name": "tailwind-superellipse",
+  "version": "0.1.0",
+  "description": "Superellipse corner utilities for Tailwind CSS v4.",
+  "license": "MIT",
+  "type": "module",
+  "style": "./index.css",
+  "exports": {
+    ".": "./index.css"
+  },
+  "files": [
+    "index.css",
+    "README.md",
+    "README.ja.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "prepublishOnly": "npm test"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^4.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.0"
+  }
+}

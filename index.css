@@ -1,0 +1,81 @@
+/* Tailwind CSS v4 utilities. Import after tailwindcss. */
+
+@utility corner-xs {
+  border-radius: var(--radius-xs);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc(var(--radius-xs) * var(--superellipse-scale, 1.5));
+    corner-shape: superellipse(var(--superellipse-exponent, 1.5));
+  }
+}
+
+@utility corner-sm {
+  border-radius: var(--radius-sm);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc(var(--radius-sm) * var(--superellipse-scale, 1.5));
+    corner-shape: superellipse(var(--superellipse-exponent, 1.5));
+  }
+}
+
+@utility corner-md {
+  border-radius: var(--radius-md);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc(var(--radius-md) * var(--superellipse-scale, 1.5));
+    corner-shape: superellipse(var(--superellipse-exponent, 1.5));
+  }
+}
+
+@utility corner-lg {
+  border-radius: var(--radius-lg);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc(var(--radius-lg) * var(--superellipse-scale, 1.5));
+    corner-shape: superellipse(var(--superellipse-exponent, 1.5));
+  }
+}
+
+@utility corner-xl {
+  border-radius: var(--radius-xl);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc(var(--radius-xl) * var(--superellipse-scale, 1.5));
+    corner-shape: superellipse(var(--superellipse-exponent, 1.5));
+  }
+}
+
+@utility corner-2xl {
+  border-radius: var(--radius-2xl);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc(var(--radius-2xl) * var(--superellipse-scale, 1.5));
+    corner-shape: superellipse(var(--superellipse-exponent, 1.5));
+  }
+}
+
+@utility corner-3xl {
+  border-radius: var(--radius-3xl);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc(var(--radius-3xl) * var(--superellipse-scale, 1.5));
+    corner-shape: superellipse(var(--superellipse-exponent, 1.5));
+  }
+}
+
+@utility corner-4xl {
+  border-radius: var(--radius-4xl);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc(var(--radius-4xl) * var(--superellipse-scale, 1.5));
+    corner-shape: superellipse(var(--superellipse-exponent, 1.5));
+  }
+}
+
+@utility corner-full {
+  border-radius: 1000px;
+
+  @supports (corner-shape: superellipse(1.5)) {
+    corner-shape: superellipse(var(--superellipse-exponent, 1.1));
+  }
+}
