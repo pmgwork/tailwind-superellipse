@@ -13,16 +13,8 @@ Superellipse corner utilities for Tailwind CSS v4. Use `corner-*` classes to giv
 
 Requires **Tailwind CSS 4.1 or later within v4**. This package contains source CSS that must be processed by Tailwind at build time.
 
-The package is not yet published to npm. To try it, download or clone this repository and create a package from its root directory:
-
 ```sh
-npm pack
-```
-
-Then install the generated file in your Tailwind project, replacing the path below with its actual location:
-
-```sh
-npm install /absolute/path/to/tailwind-superellipse-0.1.0.tgz
+npm install tailwind-superellipse
 ```
 
 Import the utilities after Tailwind in your entry CSS:

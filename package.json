@@ -3,6 +3,23 @@
   "version": "0.1.0",
   "description": "Superellipse corner utilities for Tailwind CSS v4.",
   "license": "MIT",
+  "author": "Yuto",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmgwork/tailwind-superellipse.git"
+  },
+  "homepage": "https://github.com/pmgwork/tailwind-superellipse#readme",
+  "bugs": {
+    "url": "https://github.com/pmgwork/tailwind-superellipse/issues"
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "superellipse",
+    "squircle",
+    "corner-shape",
+    "css"
+  ],
   "type": "module",
   "style": "./index.css",
   "exports": {

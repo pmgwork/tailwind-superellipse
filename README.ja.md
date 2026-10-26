@@ -13,16 +13,8 @@ Tailwind CSS v4 用の superellipse 角丸ユーティリティです。`corner-
 
 **Tailwind CSS v4 の 4.1 以降**が必要です。このパッケージはソース CSS を提供するため、ビルド時に Tailwind で処理してください。
 
-npm にはまだ公開していません。試す場合は、このリポジトリをダウンロードまたは clone し、ルートディレクトリでパッケージを作成します。
-
 ```sh
-npm pack
-```
-
-利用する Tailwind プロジェクトで、生成されたファイルをインストールします。パスは実際の保存先に置き換えてください。
-
-```sh
-npm install /absolute/path/to/tailwind-superellipse-0.1.0.tgz
+npm install tailwind-superellipse
 ```
 
 エントリー CSS で、Tailwind の後に読み込みます。
