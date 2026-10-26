@@ -46,3 +46,49 @@ test('uses the consumer radius theme and excludes unused utilities', async () =>
   assert.ok(!css.includes('.corner-md'));
   assert.ok(!css.includes('.corner-full'));
 });
+
+test('arbitrary values and CSS variables use the same scaling', async () => {
+  const css = await build(['corner-[20px]', 'corner-(length:--my-r)', 'md:corner-[10px]']);
+  assert.ok(css.includes('border-radius: 20px'));
+  assert.ok(css.includes('calc(20px * var(--superellipse-scale, 1.5))'));
+  assert.ok(css.includes('border-radius: var(--my-r)'));
+  assert.ok(css.includes('calc(var(--my-r) * var(--superellipse-scale, 1.5))'));
+  assert.ok(css.includes('calc(10px * var(--superellipse-scale, 1.5))'));
+  assert.equal(css.match(/corner-shape: superellipse\(var/g)?.length, 3);
+});
+
+test('rejects values that are not lengths or theme radii', async () => {
+  const css = await build(['corner-[red]', 'corner-foo']);
+  assert.ok(!css.includes('corner-shape'));
+});
+
+test('side and corner variants mirror rounded-*', async () => {
+  const expected = {
+    t: ['border-top-left-radius', 'border-top-right-radius'],
+    s: ['border-start-start-radius', 'border-end-start-radius'],
+    tl: ['border-top-left-radius'],
+    ee: ['border-end-end-radius'],
+  };
+  for (const [key, props] of Object.entries(expected)) {
+    const css = await build([`corner-${key}-lg`, `corner-${key}`, `corner-${key}-[20px]`]);
+    for (const prop of props) {
+      assert.ok(css.includes(`${prop}: var(--radius-lg)`), `${key}-lg ${prop}`);
+      assert.ok(css.includes(`${prop}: 0.25rem`), `${key} ${prop}`);
+      assert.ok(css.includes(`${prop}: calc(20px * var(--superellipse-scale, 1.5))`), `${key}-[20px] ${prop}`);
+    }
+    assert.ok(!css.includes('\n  border-radius:'));
+  }
+});
+
+test('none and full work for the whole element and for sides', async () => {
+  const css = await build(['corner-none', 'corner-t-none', 'corner-b-full']);
+  assert.ok(css.includes('border-radius: 0'));
+  assert.ok(css.includes('border-top-left-radius: 0'));
+  assert.ok(css.includes('border-bottom-left-radius: 1000px'));
+  assert.ok(css.includes('superellipse(var(--superellipse-exponent, 1.1))'));
+});
+
+test('a side utility overrides the all-corners utility regardless of class order', async () => {
+  const css = await build(['corner-tl-none', 'corner-lg']);
+  assert.ok(css.indexOf('.corner-lg') < css.indexOf('.corner-tl-none'));
+});

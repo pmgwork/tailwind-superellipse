@@ -33,23 +33,35 @@ npm install tailwind-superellipse
 <div class="corner-full px-4 py-2">Badge</div>
 ```
 
-通常の `rounded-*` の代わりに `corner-*` を使います。各ユーティリティが半径を設定し、対応ブラウザでは角の形状も設定します。
+`rounded-*` を使う場所に、そのまま `corner-*` を使えます。各ユーティリティが半径を設定し、対応ブラウザでは角の形状も設定します。
 
 ### ユーティリティ一覧
 
-| クラス | 基準となる半径 |
-| --- | --- |
-| `corner-xs` | `var(--radius-xs)` |
-| `corner-sm` | `var(--radius-sm)` |
-| `corner-md` | `var(--radius-md)` |
-| `corner-lg` | `var(--radius-lg)` |
-| `corner-xl` | `var(--radius-xl)` |
-| `corner-2xl` | `var(--radius-2xl)` |
-| `corner-3xl` | `var(--radius-3xl)` |
-| `corner-4xl` | `var(--radius-4xl)` |
-| `corner-full` | `1000px` |
+| パターン | 例 | 半径 |
+| --- | --- | --- |
+| `corner` | `corner` | `0.25rem`（`rounded` と同じ） |
+| `corner-{size}` | `corner-lg` | `var(--radius-lg)`。`xs`〜`4xl` はテーマの値 |
+| `corner-none` | `corner-none` | `0` |
+| `corner-full` | `corner-full` | `1000px` |
+| `corner-[value]` | `corner-[20px]` | 任意の長さ |
+| `corner-(length:--var)` | `corner-(length:--card-radius)` | `var(--card-radius)` |
 
-対応ブラウザでは、既定でテーマの半径を **1.5 倍**に補正し、`superellipse(1.5)` を適用します。`corner-full` は固定の半径を維持し、`superellipse(1.1)` を適用します。
+上のパターンはすべて、`rounded-*` と同じように辺や角を指定できます。
+
+| 接頭辞 | 対象 |
+| --- | --- |
+| `corner-t-*`、`corner-r-*`、`corner-b-*`、`corner-l-*` | 上・右・下・左の辺 |
+| `corner-s-*`、`corner-e-*` | インライン方向の開始側・終了側の辺 |
+| `corner-tl-*`、`corner-tr-*`、`corner-br-*`、`corner-bl-*` | 物理的な角 |
+| `corner-ss-*`、`corner-se-*`、`corner-ee-*`、`corner-es-*` | 論理的な角 |
+
+```html
+<div class="corner-xl corner-b-none">上だけ丸める</div>
+<div class="corner-[20px] md:corner-tl-3xl">任意の値</div>
+<div class="corner-(length:--card-radius)">CSS 変数</div>
+```
+
+テーマのサイズも任意の値も、同じ方法で半径を補正します。対応ブラウザでは、既定で **1.5 倍**にし、`superellipse(1.5)` を適用します。`corner-none` は `0` のままです。`corner-full` は固定の半径を維持し、`superellipse(1.1)` を適用します。
 
 ## カスタマイズ
 

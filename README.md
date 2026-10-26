@@ -33,23 +33,35 @@ Import the utilities after Tailwind in your entry CSS:
 <div class="corner-full px-4 py-2">Badge</div>
 ```
 
-Use `corner-*` where you would normally use `rounded-*`. Each utility sets both the radius and, in supporting browsers, the corner shape.
+Use `corner-*` exactly where you would use `rounded-*`. Each utility sets both the radius and, in supporting browsers, the corner shape.
 
 ### Available utilities
 
-| Class | Base radius |
-| --- | --- |
-| `corner-xs` | `var(--radius-xs)` |
-| `corner-sm` | `var(--radius-sm)` |
-| `corner-md` | `var(--radius-md)` |
-| `corner-lg` | `var(--radius-lg)` |
-| `corner-xl` | `var(--radius-xl)` |
-| `corner-2xl` | `var(--radius-2xl)` |
-| `corner-3xl` | `var(--radius-3xl)` |
-| `corner-4xl` | `var(--radius-4xl)` |
-| `corner-full` | `1000px` |
+| Pattern | Example | Radius |
+| --- | --- | --- |
+| `corner` | `corner` | `0.25rem` (same as `rounded`) |
+| `corner-{size}` | `corner-lg` | `var(--radius-lg)`; `xs` to `4xl` from your theme |
+| `corner-none` | `corner-none` | `0` |
+| `corner-full` | `corner-full` | `1000px` |
+| `corner-[value]` | `corner-[20px]` | Any length |
+| `corner-(length:--var)` | `corner-(length:--card-radius)` | `var(--card-radius)` |
 
-In supporting browsers, the theme radius is multiplied by **1.5** and the shape is set to `superellipse(1.5)` by default. `corner-full` keeps its fixed radius and uses `superellipse(1.1)`.
+Every pattern above also works for sides and corners, as with `rounded-*`:
+
+| Prefix | Target |
+| --- | --- |
+| `corner-t-*`, `corner-r-*`, `corner-b-*`, `corner-l-*` | Top, right, bottom, left sides |
+| `corner-s-*`, `corner-e-*` | Inline start and end sides |
+| `corner-tl-*`, `corner-tr-*`, `corner-br-*`, `corner-bl-*` | Physical corners |
+| `corner-ss-*`, `corner-se-*`, `corner-ee-*`, `corner-es-*` | Logical corners |
+
+```html
+<div class="corner-xl corner-b-none">Rounded on top only</div>
+<div class="corner-[20px] md:corner-tl-3xl">Arbitrary value</div>
+<div class="corner-(length:--card-radius)">CSS variable</div>
+```
+
+Radius values are scaled the same way for theme sizes and arbitrary values. In supporting browsers, they are multiplied by **1.5** and the shape is set to `superellipse(1.5)` by default. `corner-none` stays `0`. `corner-full` keeps its fixed radius and uses `superellipse(1.1)`.
 
 ## Customization
 
