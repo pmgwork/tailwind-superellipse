@@ -1,7 +1,7 @@
 /* Tailwind CSS v4 utilities. Import after tailwindcss.
-   Mirrors rounded-*: corner, corner-lg, corner-t-lg, corner-tl-[20px], corner-(length:--r) ... */
+   Mirrors rounded-*: squircle, squircle-lg, squircle-t-lg, squircle-tl-[20px], squircle-(length:--r) ... */
 
-@utility corner {
+@utility squircle {
   border-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -10,7 +10,7 @@
   }
 }
 
-@utility corner-* {
+@utility squircle-* {
   border-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -19,11 +19,11 @@
   }
 }
 
-@utility corner-none {
+@utility squircle-none {
   border-radius: 0;
 }
 
-@utility corner-full {
+@utility squircle-full {
   border-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -31,7 +31,7 @@
   }
 }
 
-@utility corner-s {
+@utility squircle-s {
   border-start-start-radius: 0.25rem;
   border-end-start-radius: 0.25rem;
 
@@ -42,7 +42,7 @@
   }
 }
 
-@utility corner-s-* {
+@utility squircle-s-* {
   border-start-start-radius: --value(--radius-*, [length]);
   border-end-start-radius: --value(--radius-*, [length]);
 
@@ -53,12 +53,12 @@
   }
 }
 
-@utility corner-s-none {
+@utility squircle-s-none {
   border-start-start-radius: 0;
   border-end-start-radius: 0;
 }
 
-@utility corner-s-full {
+@utility squircle-s-full {
   border-start-start-radius: 1000px;
   border-end-start-radius: 1000px;
 
@@ -67,7 +67,7 @@
   }
 }
 
-@utility corner-e {
+@utility squircle-e {
   border-start-end-radius: 0.25rem;
   border-end-end-radius: 0.25rem;
 
@@ -78,7 +78,7 @@
   }
 }
 
-@utility corner-e-* {
+@utility squircle-e-* {
   border-start-end-radius: --value(--radius-*, [length]);
   border-end-end-radius: --value(--radius-*, [length]);
 
@@ -89,12 +89,12 @@
   }
 }
 
-@utility corner-e-none {
+@utility squircle-e-none {
   border-start-end-radius: 0;
   border-end-end-radius: 0;
 }
 
-@utility corner-e-full {
+@utility squircle-e-full {
   border-start-end-radius: 1000px;
   border-end-end-radius: 1000px;
 
@@ -103,7 +103,7 @@
   }
 }
 
-@utility corner-t {
+@utility squircle-t {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 
@@ -114,7 +114,7 @@
   }
 }
 
-@utility corner-t-* {
+@utility squircle-t-* {
   border-top-left-radius: --value(--radius-*, [length]);
   border-top-right-radius: --value(--radius-*, [length]);
 
@@ -125,12 +125,12 @@
   }
 }
 
-@utility corner-t-none {
+@utility squircle-t-none {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-@utility corner-t-full {
+@utility squircle-t-full {
   border-top-left-radius: 1000px;
   border-top-right-radius: 1000px;
 
@@ -139,7 +139,7 @@
   }
 }
 
-@utility corner-r {
+@utility squircle-r {
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
 
@@ -150,7 +150,7 @@
   }
 }
 
-@utility corner-r-* {
+@utility squircle-r-* {
   border-top-right-radius: --value(--radius-*, [length]);
   border-bottom-right-radius: --value(--radius-*, [length]);
 
@@ -161,12 +161,12 @@
   }
 }
 
-@utility corner-r-none {
+@utility squircle-r-none {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-@utility corner-r-full {
+@utility squircle-r-full {
   border-top-right-radius: 1000px;
   border-bottom-right-radius: 1000px;
 
@@ -175,7 +175,7 @@
   }
 }
 
-@utility corner-b {
+@utility squircle-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 
@@ -186,7 +186,7 @@
   }
 }
 
-@utility corner-b-* {
+@utility squircle-b-* {
   border-bottom-right-radius: --value(--radius-*, [length]);
   border-bottom-left-radius: --value(--radius-*, [length]);
 
@@ -197,12 +197,12 @@
   }
 }
 
-@utility corner-b-none {
+@utility squircle-b-none {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-@utility corner-b-full {
+@utility squircle-b-full {
   border-bottom-right-radius: 1000px;
   border-bottom-left-radius: 1000px;
 
@@ -211,7 +211,7 @@
   }
 }
 
-@utility corner-l {
+@utility squircle-l {
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 
@@ -222,7 +222,7 @@
   }
 }
 
-@utility corner-l-* {
+@utility squircle-l-* {
   border-top-left-radius: --value(--radius-*, [length]);
   border-bottom-left-radius: --value(--radius-*, [length]);
 
@@ -233,12 +233,12 @@
   }
 }
 
-@utility corner-l-none {
+@utility squircle-l-none {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-@utility corner-l-full {
+@utility squircle-l-full {
   border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
 
@@ -247,7 +247,7 @@
   }
 }
 
-@utility corner-ss {
+@utility squircle-ss {
   border-start-start-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -256,7 +256,7 @@
   }
 }
 
-@utility corner-ss-* {
+@utility squircle-ss-* {
   border-start-start-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -265,11 +265,11 @@
   }
 }
 
-@utility corner-ss-none {
+@utility squircle-ss-none {
   border-start-start-radius: 0;
 }
 
-@utility corner-ss-full {
+@utility squircle-ss-full {
   border-start-start-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -277,7 +277,7 @@
   }
 }
 
-@utility corner-se {
+@utility squircle-se {
   border-start-end-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -286,7 +286,7 @@
   }
 }
 
-@utility corner-se-* {
+@utility squircle-se-* {
   border-start-end-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -295,11 +295,11 @@
   }
 }
 
-@utility corner-se-none {
+@utility squircle-se-none {
   border-start-end-radius: 0;
 }
 
-@utility corner-se-full {
+@utility squircle-se-full {
   border-start-end-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -307,7 +307,7 @@
   }
 }
 
-@utility corner-ee {
+@utility squircle-ee {
   border-end-end-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -316,7 +316,7 @@
   }
 }
 
-@utility corner-ee-* {
+@utility squircle-ee-* {
   border-end-end-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -325,11 +325,11 @@
   }
 }
 
-@utility corner-ee-none {
+@utility squircle-ee-none {
   border-end-end-radius: 0;
 }
 
-@utility corner-ee-full {
+@utility squircle-ee-full {
   border-end-end-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -337,7 +337,7 @@
   }
 }
 
-@utility corner-es {
+@utility squircle-es {
   border-end-start-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -346,7 +346,7 @@
   }
 }
 
-@utility corner-es-* {
+@utility squircle-es-* {
   border-end-start-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -355,11 +355,11 @@
   }
 }
 
-@utility corner-es-none {
+@utility squircle-es-none {
   border-end-start-radius: 0;
 }
 
-@utility corner-es-full {
+@utility squircle-es-full {
   border-end-start-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -367,7 +367,7 @@
   }
 }
 
-@utility corner-tl {
+@utility squircle-tl {
   border-top-left-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -376,7 +376,7 @@
   }
 }
 
-@utility corner-tl-* {
+@utility squircle-tl-* {
   border-top-left-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -385,11 +385,11 @@
   }
 }
 
-@utility corner-tl-none {
+@utility squircle-tl-none {
   border-top-left-radius: 0;
 }
 
-@utility corner-tl-full {
+@utility squircle-tl-full {
   border-top-left-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -397,7 +397,7 @@
   }
 }
 
-@utility corner-tr {
+@utility squircle-tr {
   border-top-right-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -406,7 +406,7 @@
   }
 }
 
-@utility corner-tr-* {
+@utility squircle-tr-* {
   border-top-right-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -415,11 +415,11 @@
   }
 }
 
-@utility corner-tr-none {
+@utility squircle-tr-none {
   border-top-right-radius: 0;
 }
 
-@utility corner-tr-full {
+@utility squircle-tr-full {
   border-top-right-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -427,7 +427,7 @@
   }
 }
 
-@utility corner-br {
+@utility squircle-br {
   border-bottom-right-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -436,7 +436,7 @@
   }
 }
 
-@utility corner-br-* {
+@utility squircle-br-* {
   border-bottom-right-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -445,11 +445,11 @@
   }
 }
 
-@utility corner-br-none {
+@utility squircle-br-none {
   border-bottom-right-radius: 0;
 }
 
-@utility corner-br-full {
+@utility squircle-br-full {
   border-bottom-right-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -457,7 +457,7 @@
   }
 }
 
-@utility corner-bl {
+@utility squircle-bl {
   border-bottom-left-radius: 0.25rem;
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -466,7 +466,7 @@
   }
 }
 
-@utility corner-bl-* {
+@utility squircle-bl-* {
   border-bottom-left-radius: --value(--radius-*, [length]);
 
   @supports (corner-shape: superellipse(1.5)) {
@@ -475,11 +475,11 @@
   }
 }
 
-@utility corner-bl-none {
+@utility squircle-bl-none {
   border-bottom-left-radius: 0;
 }
 
-@utility corner-bl-full {
+@utility squircle-bl-full {
   border-bottom-left-radius: 1000px;
 
   @supports (corner-shape: superellipse(1.5)) {
